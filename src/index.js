@@ -39,7 +39,7 @@ exports.Cloudy = async(req, res) => {
 
         slackReq = {
           method : 'POST',
-          url : "https://hooks.slack.com/services/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",
+          url : "INCOMING-WEBHOOK-URL-OF-YOUR-CHANNEL",
           data: {
             
             "text": outgoingText
@@ -55,7 +55,7 @@ exports.Cloudy = async(req, res) => {
       } else {
 
         const configuration = new Configuration({
-          apiKey: "insert-your-api-key-here",
+          apiKey: "YOUR-OPENAI-API-KEY",
         });
         const openai = new OpenAIApi(configuration);
         
@@ -69,7 +69,7 @@ exports.Cloudy = async(req, res) => {
 
         slackReq = {
           method : 'POST',
-          url : "https://hooks.slack.com/services/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",
+          url : "INCOMING-WEBHOOK-URL-OF-YOUR-CHANNEL",
           data: {
             
             "text": result.data.choices[0].text

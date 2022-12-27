@@ -1,3 +1,4 @@
+YouTube Link For Stress Testing Presentation: https://youtu.be/ulXYoK8VjzM
 # SlackSmartBot
 
 Welcome to the Google Cloud Functions project for integrating Slack and OpenAI! This project allows users to send messages to a Slack channel and receive responses from the OpenAI API through a Google Cloud Function.

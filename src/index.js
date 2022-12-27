@@ -55,7 +55,7 @@ exports.Cloudy = async(req, res) => {
       } else {
 
         const configuration = new Configuration({
-          apiKey: "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",
+          apiKey: "insert-your-api-key-here",
         });
         const openai = new OpenAIApi(configuration);
         

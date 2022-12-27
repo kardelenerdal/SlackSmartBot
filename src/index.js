@@ -16,9 +16,9 @@ exports.Cloudy = async(req, res) => {
 
   res.status(200).send('OK');
  
-  if(!req.body.event.subtype ||  req.body.event.subtype !== "bot_message"){
+  if (!req.body.event.subtype ||  req.body.event.subtype !== "bot_message") {
 
-    try{
+    try {
       
       const db = getFirestore();  
       const requestsCollection = db.collection('requests');
@@ -26,7 +26,7 @@ exports.Cloudy = async(req, res) => {
       const query = requestsCollection.where('prompt', '==', req.body.event.text);
       const queryResults = await query.get();
 
-      if(!queryResults.empty){
+      if(!queryResults.empty) {
 
         let outgoingText = "";
 
@@ -52,7 +52,7 @@ exports.Cloudy = async(req, res) => {
         };
         await axios(slackReq);
 
-      }else{
+      } else {
 
         const configuration = new Configuration({
           apiKey: "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",
@@ -89,13 +89,12 @@ exports.Cloudy = async(req, res) => {
         requestsCollection.add(data);
       }
 
-    }catch(error){
+    } catch (error) {
 
         console.log(error);  
         res.send(error) 
     }
-  }else{
-
-    console.log("ben bot mesajıyım")
+  } else {
+    
   }
 };
